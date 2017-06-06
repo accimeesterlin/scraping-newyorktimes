@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({
 
 
 if(process.env.MONGO_URI){
-    mongoose.connect(process.env.MONGO.URI);
+    mongoose.connect(process.env.MONGO_URI);
 } else{
     mongoose.connect("mongodb://localhost/nytimes");
 }
