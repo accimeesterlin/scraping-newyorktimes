@@ -1,0 +1,9 @@
+.center{
+    text-align:center;
+}
+
+.panel-heading{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}

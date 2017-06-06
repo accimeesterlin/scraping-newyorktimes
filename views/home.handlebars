@@ -1,0 +1,46 @@
+<div class="page-header">
+    <h1>Welcome to New York Times <small>Scraping App</small></h1>
+    <a href="/"><button class="btn btn-default">Home</button></a>
+    <a href="/articles"><button class="btn btn-primary">Articles</button></a>
+
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" id="scrape">Scrape new Articles</button>
+
+</div>
+
+<div class="jumbotron">
+    <h1 class="center">Hello World!!!</h1>
+</div>
+
+<h2>No articles listed yet!!!</h2>
+<!-- Trigger the modal with a button -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Articles scraped!!!!</h4>
+            </div>
+            <div class="modal-body">
+                <p id="result">You have scraped  new articles. Awesome!!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="/articles"><button type="button" class="btn btn-primary">Ok</button></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $("#scrape").on("click", function () {
+        $.getJSON("/scrape", function (data) {
+            $("#result").html("You have scraped " + data.length + " new articles. Awesome!!!!");
+        });
+    });
+
+</script>
