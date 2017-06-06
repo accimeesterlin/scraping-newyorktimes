@@ -19,8 +19,8 @@ app.use(bodyParser.urlencoded({
 
 
 
-if(process.env.MONGO_URI){
-    mongoose.connect(process.env.MONGO_URI);
+if(process.env.MONGODB_URI){
+    mongoose.connect(process.env.MONGODB_URI);
 } else{
     mongoose.connect("mongodb://localhost/nytimes");
 }
